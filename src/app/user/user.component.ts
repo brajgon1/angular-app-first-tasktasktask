@@ -15,7 +15,13 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 export class UserComponent {
   // the below -- now all properties this is available in the user component
   selectedUser = signal(DUMMY_USERS[randomIndex]);
+  // signals usage below
   imagePath = computed(() => 'assets/users/' + this.selectedUser().avatar);
+
+  // how to dynamically import the photos without signals
+  // get imagePath() {
+  //   return 'assets/users/' + this.selectedUser.avatar;
+  // }
   
   onSelectUser() {
     const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
