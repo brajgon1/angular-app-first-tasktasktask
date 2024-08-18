@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { DUMMY_USERS } from '../dummy-users';
+
 
 @Component({
   selector: 'app-tasks',
