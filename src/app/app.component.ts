@@ -8,14 +8,20 @@ import { DUMMY_USERS } from './dummy-users';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, UserComponent, TasksComponent], 
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+  imports: [HeaderComponent, UserComponent, TasksComponent], 
 })
 export class AppComponent {
   users = DUMMY_USERS;
+  selectedUserId = 'u1'
+  
+  get selectedUser() {
+    return this.users.find((user => user.id === this.selectedUserId))!;
+  }
 
   onSelectUser(id: string) {
     console.log('Selected User with ID ' + id)
+    this.selectedUserId = id;
   }
 }
