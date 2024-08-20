@@ -1,5 +1,18 @@
 import { Component, Input, Output, EventEmitter, output } from '@angular/core';
 
+// Type Aliases
+// type User = {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// }
+
+// Interface
+interface User {
+  id: string;
+  name: string;
+  avatar: string;
+}
 @Component({
   selector: 'app-user',
   standalone: true,
@@ -8,11 +21,7 @@ import { Component, Input, Output, EventEmitter, output } from '@angular/core';
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-@Input({ required: true }) user!: {
-  id: string;
-  name: string;
-  avatar: string;
-};
+@Input({ required: true }) user!: User; 
   @Output() select = new EventEmitter<string>();
 
   // output function --
