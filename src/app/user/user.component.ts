@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, output } from '@angular/core';
 
+import { User } from './user.model';
 // Type Aliases
 // type User = {
 //   id: string;
@@ -8,11 +9,11 @@ import { Component, Input, Output, EventEmitter, output } from '@angular/core';
 // }
 
 // Interface
-interface User {
-  id: string;
-  name: string;
-  avatar: string;
-}
+// interface User {
+//   id: string;
+//   name: string;
+//   avatar: string;
+// }
 @Component({
   selector: 'app-user',
   standalone: true,
