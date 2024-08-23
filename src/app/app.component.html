@@ -12,6 +12,27 @@
   @if (selectedUser) {
   <app-tasks [name]="selectedUser.name" />
   } @else {
-    <p id="fallback">Select a user to see their tasks</p>
+  <p id="fallback">Select a user to see their tasks</p>
   }
 </main>
+
+
+<!-- //////////////////////////////////////////////////////////////// -->
+<!-- legacy syntax
+
+
+ <li *ngFor="let user of users">
+      <app-user [user]="user" (select)="onSelectUser($event)" />
+  </li>
+
+
+
+  <app-task *ngIf="selectedUser; else fallback" [name]="selectedUser!.name" />
+
+  for the else case
+
+  <ng-template #fallback>
+    <p id="fallback">Select a user to see their tasks</p>
+  </ng-template>
+
+-->
